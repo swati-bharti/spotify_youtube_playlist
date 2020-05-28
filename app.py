@@ -33,10 +33,7 @@ class SpotifyPlaylist:
 
         )
         response = request.execute()
-        print("This is youtube response")
-        print(response["items"])
-        print("\n")
-
+        
         for item in response["items"]:
 
             title = item["snippet"]["title"]
@@ -68,13 +65,12 @@ class SpotifyPlaylist:
                 }
             )
             json_res = response.json()
-            print(json_res)
-            print("\n")
+           
             songs = json_res["tracks"]["items"]
 
 
-            print("These are the songs")
-            print(len(songs))
+           
+          
 
             return songs[0]["uri"]
         except Exception:
